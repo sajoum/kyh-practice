@@ -1,42 +1,38 @@
 import random
 
-maxnum = 100
-a_random_int = random.randint(1, maxnum)
 
-print(f"Jag tänker på ett tal mellan 1 och {maxnum}. Gissa vilket!")
+n = random.randint(1, 100)
+print("Jag tänker på ett nummer mellan 1 och 100. Gissa vilket?")
+def ask_number():
+    text = input("Din gissning: ")
+    siffra = int(text)
+    return siffra
 
 
 def mainloop():
-    guess_count = 0
-
+    antal_gissningar = 0
     while True:
-        guessed_number = ask_number()
-        guess_count += 1
 
-        if guessed_number == a_random_int:
-            print("Rätt!")
-            break
+        as_number = ask_number()
 
-        if guessed_number < a_random_int:
-            print("Fel, mitt tal är större. Gissa igen!")
-
-        if guessed_number > a_random_int:
-            print("Fel, mitt tal är mindre. Gissa igen!")
-
-    return guess_count
+        antal_gissningar += 1
 
 
-def ask_number():
-    text = input("Din gissning: ")
-    as_number = int(text)
-    return as_number
 
-# Anropa mainloop som är "huvudprogrammet"
-# Spara resultatet från mainloop för utskrift
-gissningar = mainloop()
+        if as_number == n:
+            print("Korrekt!")
+            return antal_gissningar
 
-# Använd variabeln
-print(f"Du behövde {gissningar} gissningar.")
+        if as_number < n:
+            print("Fel, mitt nummer är högre... Försök igen!")
+
+        if as_number > n:
+            print("Fel, mitt nummer är lägre... Försök igen!")
+
+antal_gissningar = mainloop()
+print(f"Du behövde {antal_gissningar} gissningar.")
+
+
 
 
 
