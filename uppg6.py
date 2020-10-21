@@ -1,18 +1,5 @@
-def add(a, b):
-    result = a + b
-    return result
+from calc import add, subtract, multiply, divide
 
-def subtract(a, b):
-    result = a - b
-    return result
-
-def multiply(a, b):
-    result = a * b
-    return result
-
-def divide(a, b):
-    result = a / b
-    return result
 
 def run():
     print("This program will help with simple calculations. What do you want to do?")
@@ -30,8 +17,8 @@ def run():
     if answer == "3":
         result = multiply(a, b)
     if answer == "4":
-        result = divide(a,b)
-    print("Result = " + str(result))
+        result = divide(a, b)
+    print(f"Result = {str(result)}")
 if __name__ == '__main__':
     print("välkommen")
     run()

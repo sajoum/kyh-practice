@@ -26,7 +26,7 @@ def run():
             result = divide(a, b)
 
 
-        print("Result = " + str(result))
+        print(f"Result = {result}")
 
 
 
